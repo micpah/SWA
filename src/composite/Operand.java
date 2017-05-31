@@ -1,16 +1,25 @@
 package composite;
 
+import java.util.HashMap;
+
 /**
  * --- LEAF ----
  * Created by micpah on 2017-05-31.
  */
 public class Operand implements Component {
-    private String operand;
-    public Operand(String operand) {
+    public static HashMap<Variable,Integer> values = new HashMap<>();
+
+
+    public enum Variable {
+        A,B,C,D,E,F
+    }
+
+    private Variable operand;
+    public Operand(Variable operand) {
         this.operand = operand;
     }
 
     public void traverse() {
-        System.out.print(operand);
+        System.out.print(values.get(operand));
     }
 }
