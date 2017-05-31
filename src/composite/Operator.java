@@ -24,10 +24,10 @@ public class Operator implements Component {
         children[total++] = c;
     }
 
-    public void traverse() {
+    public void print() {
         System.out.print(operator);
         for (int i = 0; i < total; i++) {
-            children[i].traverse();
+            children[i].print();
         }
     }
 
