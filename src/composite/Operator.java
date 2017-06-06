@@ -1,7 +1,6 @@
 package composite;
 
 import java.security.InvalidParameterException;
-import java.util.List;
 
 /**
  * ---- COMPOSITE ----
@@ -12,17 +11,17 @@ public abstract class Operator implements Component {
     public Component last;
 
 
-    public Operator withCompontents (Component ... compontents) {
-        for (Component component:compontents){
+    public Operator withCompontents(Component... compontents) {
+        for (Component component : compontents) {
             add(component);
         }
         return this;
     }
 
     public void add(Component c) {
-        if (first == null){
+        if (first == null) {
             first = c;
-        } else if (last == null){
+        } else if (last == null) {
             last = c;
         } else {
             throw new InvalidParameterException("NO!");
@@ -30,6 +29,7 @@ public abstract class Operator implements Component {
     }
 
     public abstract void print();
-    public abstract int evaluate() ;
+
+    public abstract int evaluate();
 
 }
