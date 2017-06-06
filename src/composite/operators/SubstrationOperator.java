@@ -14,7 +14,8 @@ public class SubstrationOperator extends Operator {
     }
 
     @Override
-    public String getStringRepresentation() {
-        return "-";
+    public String getStringRepresentation(String op1, String op2) {
+        return "(" + op1 + "-" + op2 + ")";
     }
+
 }

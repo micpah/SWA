@@ -1,35 +1,21 @@
 package iterator;
 
 import composite.Component;
-import composite.Operand;
-import composite.Operator;
 
 /**
  * Created by johannes on 06.06.17.
  */
-public class EvaluateIterator {
-    private Component operator;
+public class EvaluateIterator extends Iterator<Integer>{
+
 
     public EvaluateIterator(Component operator) {
-        this.operator = operator;
-        System.out.println(evaluate(this.operator));
+        super(operator);
     }
 
-    public int evaluate(Component component) {
-        if (component instanceof Operator) {
-            return evaluate((Operator) component);
+    public Integer traverse(Component component) {
+        if (component == null) {
+            return 0;
         }
-        if (component instanceof Operand) {
-            return evaluate((Operand) component);
-        }
-        throw new IllegalStateException("NOPE!");
-    }
-
-    public int evaluate(Operator op) {
-        return op.getValue(evaluate(op.first), evaluate(op.last));
-    }
-
-    public int evaluate(Operand op) {
-        return op.getValue();
+        return component.getValue(traverse(component.getLeft()), traverse(component.getRight()));
     }
 }

@@ -7,8 +7,8 @@ import java.security.InvalidParameterException;
  * Created by micpah on 2017-05-31.
  */
 public abstract class Operator implements Component {
-    public Component first;
-    public Component last;
+    public Component left;
+    public Component right;
 
 
     public Operator withCompontents(Component... compontents) {
@@ -19,14 +19,22 @@ public abstract class Operator implements Component {
     }
 
     public void add(Component c) {
-        if (first == null) {
-            first = c;
-        } else if (last == null) {
-            last = c;
+        if (left == null) {
+            left = c;
+        } else if (right == null) {
+            right = c;
         } else {
             throw new InvalidParameterException("NO!");
         }
     }
 
-    public abstract int getValue(int first, int last);
+    @Override
+    public Component getLeft() {
+        return left;
+    }
+
+    @Override
+    public Component getRight() {
+        return right;
+    }
 }

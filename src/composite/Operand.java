@@ -15,12 +15,24 @@ public class Operand implements Component {
         this.operand = operand;
     }
 
-    public int getValue() {
+
+    @Override
+    public String getStringRepresentation(String op1, String op2) {
+        return operand.getValue();
+    }
+
+    @Override
+    public int getValue(int op1, int op2) {
         return values.get(operand);
     }
 
     @Override
-    public String getStringRepresentation() {
-        return operand.getValue();
+    public Component getLeft() {
+        return null;
+    }
+
+    @Override
+    public Component getRight() {
+        return null;
     }
 }
