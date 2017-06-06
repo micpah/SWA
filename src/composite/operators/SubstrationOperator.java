@@ -15,6 +15,6 @@ public class SubstrationOperator extends Operator {
 
     @Override
     public String getStringRepresentation() {
-        return "*";
+        return "-";
     }
 }

@@ -9,17 +9,17 @@ import composite.Operator;
  */
 public class PrintIterator {
 
-    private Operator operator;
+    private Component operator;
 
-    public PrintIterator(Operator operator) {
+    public PrintIterator(Component operator) {
         this.operator = operator;
-        System.out.println(print(operator));
+        System.out.println(print(this.operator));
     }
 
     public String print(Component component) {
         if (component instanceof Operator) {
             Operator op = (Operator) component;
-            return "("+print(op.first) + op.getStringRepresentation() + print(op.last) + ")";
+            return "(" + print(op.first) + op.getStringRepresentation() + print(op.last) + ")";
         }
         if (component instanceof Operand) {
             Operand op = (Operand) component;
