@@ -28,8 +28,5 @@ public abstract class Operator implements Component {
         }
     }
 
-    public abstract void print();
-
-    public abstract int evaluate();
-
+    public abstract int getValue(int first, int last);
 }

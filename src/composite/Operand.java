@@ -15,11 +15,12 @@ public class Operand implements Component {
         this.operand = operand;
     }
 
-    public void print() {
-        System.out.print(operand.getValue());
+    public int getValue() {
+        return values.get(operand);
     }
 
-    public int evaluate() {
-        return values.get(operand);
+    @Override
+    public String getStringRepresentation() {
+        return operand.getValue();
     }
 }

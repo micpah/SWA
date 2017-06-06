@@ -4,6 +4,8 @@ import composite.Variable;
 import composite.operators.AdditionOperator;
 import composite.operators.MultiplicationOperator;
 import composite.operators.SubstrationOperator;
+import iterator.EvaluateIterator;
+import iterator.PrintIterator;
 
 /**
  * Created by micpah on 2017-05-31.
@@ -27,8 +29,8 @@ public class Main {
         );
 
         Operator operator = new AdditionOperator().withCompontents(first, second);
-        operator.print();
-        System.out.println();
-        System.out.println(operator.evaluate());
+        EvaluateIterator iterator = new EvaluateIterator(operator);
+        System.out.println(iterator.getResult());
+        PrintIterator printIterator = new PrintIterator(operator);
     }
 }
