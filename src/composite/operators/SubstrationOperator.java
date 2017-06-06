@@ -23,7 +23,7 @@ public class SubstrationOperator extends Operator {
     @Override
     public int evaluate() {
         if (first != null && last != null) {
-            return first.evaluate() + last.evaluate();
+            return first.evaluate() - last.evaluate();
         } else {
             throw new IllegalStateException("NO!");
 

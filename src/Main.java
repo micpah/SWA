@@ -15,7 +15,7 @@ public class Main {
         Operand.values.put(Variable.C, 3);
         Operand.values.put(Variable.D, 4);
 
-        Operator first = new AdditionOperator();
+        Operator first = new MultiplicationOperator();
         first.withCompontents(
                 new AdditionOperator().withCompontents(new Operand(Variable.A), new Operand(Variable.B)),
                 new SubstrationOperator().withCompontents(new Operand(Variable.A), new Operand(Variable.C))
@@ -28,5 +28,6 @@ public class Main {
 
         Operator operator = new AdditionOperator().withCompontents(first, second);
         operator.print();
+        System.out.println(operator.evaluate());
     }
 }
