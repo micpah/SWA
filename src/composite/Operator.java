@@ -1,17 +1,16 @@
 package composite;
 
+import java.security.InvalidParameterException;
+import java.util.List;
+
 /**
  * ---- COMPOSITE ----
  * Created by micpah on 2017-05-31.
  */
-public class Operator implements Component {
-    private Component[] children = new Component[9];
-    private int total = 0;
-    private String operator;
+public abstract class Operator implements Component {
+    public Component first;
+    public Component last;
 
-    public Operator(String operator) {
-        this.operator = operator;
-    }
 
     public Operator withCompontents (Component ... compontents) {
         for (Component component:compontents){
@@ -21,15 +20,16 @@ public class Operator implements Component {
     }
 
     public void add(Component c) {
-        children[total++] = c;
-    }
-
-    public void print() {
-        System.out.print(operator);
-        for (int i = 0; i < total; i++) {
-            children[i].print();
+        if (first == null){
+            first = c;
+        } else if (last == null){
+            last = c;
+        } else {
+            throw new InvalidParameterException("NO!");
         }
     }
 
+    public abstract void print();
+    public abstract int evaluate() ;
 
 }

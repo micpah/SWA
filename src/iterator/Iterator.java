@@ -1,7 +1,5 @@
 package iterator;
 
-import java.util.Collection;
-
 /**
  * Created by micpah on 2017-05-31.
  */

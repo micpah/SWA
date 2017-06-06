@@ -16,10 +16,10 @@ public class Operand implements Component {
     }
 
     public void print() {
-        System.out.print(evaluate());
+        System.out.print(operand.getValue());
     }
 
-    public String evaluate() {
-        return String.valueOf(values.get(operand));
+    public int evaluate() {
+        return values.get(operand);
     }
 }
