@@ -16,8 +16,7 @@ public class Operand implements Component {
     }
 
     public void print() {
-        //System.out.print(operand.getValue());
-        System.out.print(evaluate());
+        System.out.print(operand.getValue());
     }
 
     public int evaluate() {

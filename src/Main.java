@@ -28,6 +28,7 @@ public class Main {
 
         Operator operator = new AdditionOperator().withCompontents(first, second);
         operator.print();
+        System.out.println();
         System.out.println(operator.evaluate());
     }
 }
