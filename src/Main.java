@@ -29,8 +29,8 @@ public class Main {
         );
 
         Operator operator = new AdditionOperator().withCompontents(first, second);
-        EvaluateIterator iterator = new EvaluateIterator(operator);
-        System.out.println(iterator.getResult());
+
         PrintIterator printIterator = new PrintIterator(operator);
+        EvaluateIterator iterator = new EvaluateIterator(operator);
     }
 }

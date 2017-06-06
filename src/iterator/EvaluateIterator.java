@@ -8,12 +8,11 @@ import composite.Operator;
  * Created by johannes on 06.06.17.
  */
 public class EvaluateIterator {
-    private final int result;
     private Operator operator;
 
     public EvaluateIterator(Operator operator) {
         this.operator = operator;
-        result = evaluate(operator);
+        System.out.println(evaluate(operator));
     }
 
     public int evaluate(Component component) {
@@ -26,9 +25,5 @@ public class EvaluateIterator {
             return op.getValue();
         }
         throw new IllegalStateException("NOPE!");
-    }
-
-    public int getResult() {
-        return result;
     }
 }
