@@ -1,5 +1,9 @@
 package composite;
 
+import visitor.EvaluateVisitor;
+import visitor.PrintVisitor;
+import visitor.Visitor;
+
 import java.util.HashMap;
 
 /**
@@ -16,23 +20,17 @@ public class Operand implements Component {
     }
 
 
-    @Override
-    public String getStringRepresentation(String op1, String op2) {
+    public String getStringRepresentation() {
         return operand.getValue();
     }
 
-    @Override
-    public int getValue(int op1, int op2) {
+
+    public int getValue() {
         return values.get(operand);
     }
 
     @Override
-    public Component getLeft() {
-        return null;
-    }
-
-    @Override
-    public Component getRight() {
-        return null;
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

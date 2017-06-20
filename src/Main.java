@@ -6,6 +6,8 @@ import composite.operators.MultiplicationOperator;
 import composite.operators.SubstrationOperator;
 import iterator.EvaluateIterator;
 import iterator.PrintIterator;
+import visitor.EvaluateVisitor;
+import visitor.PrintVisitor;
 
 /**
  * Created by micpah on 2017-05-31.
@@ -30,7 +32,7 @@ public class Main {
 
         Operator operator = new AdditionOperator().withCompontents(first, second);
 
-        PrintIterator printIterator = new PrintIterator(operator);
-        EvaluateIterator iterator = new EvaluateIterator(operator);
+        PrintIterator printIterator = new PrintIterator(operator, new PrintVisitor());
+        EvaluateIterator iterator = new EvaluateIterator(operator, new EvaluateVisitor());
     }
 }

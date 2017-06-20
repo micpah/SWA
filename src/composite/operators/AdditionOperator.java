@@ -1,6 +1,7 @@
 package composite.operators;
 
 import composite.Operator;
+import visitor.Visitor;
 
 /**
  * Created by johannes on 06.06.17.
@@ -8,12 +9,17 @@ import composite.Operator;
 public class AdditionOperator extends Operator {
 
     @Override
-    public String getStringRepresentation(String op1, String op2) {
-        return "(" + op1 + "+" + op2 + ")";
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
-    public int getValue( int first, int last) {
-        return first + last;
+    public String getStringRepresentation() {
+        return "+";
+    }
+
+    @Override
+    public int calculate(int left, int right) {
+        return left + right;
     }
 }

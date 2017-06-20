@@ -1,5 +1,7 @@
 package composite;
 
+import visitor.Visitor;
+
 import java.security.InvalidParameterException;
 
 /**
@@ -28,13 +30,16 @@ public abstract class Operator implements Component {
         }
     }
 
-    @Override
     public Component getLeft() {
         return left;
     }
 
-    @Override
     public Component getRight() {
         return right;
     }
+
+    public abstract String getStringRepresentation();
+
+    public abstract int calculate(int left, int right);
+
 }
